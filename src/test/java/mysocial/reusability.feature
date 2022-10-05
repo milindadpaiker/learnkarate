@@ -2,7 +2,7 @@ Feature: Verify reusability
 
 Background: Initialize stuff
    Given url 'http://localhost:3000'
-   * def signinToken = call read('login.feature@login') {email: "abc789.xyz@gmail.com" , password: "Abc1"}
+   * def signinToken = callonce read('login.feature@login') {email: "abc789.xyz@gmail.com" , password: "Abc1"}
    * print signinToken
    #* def authtoken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMzY2M1MzliMjM2MDUyNjEwZWQ5ZGQ4IiwiZW1haWwiOiJhYmM3ODkueHl6QGdtYWlsLmNvbSIsImlhdCI6MTY2NDkyNzA0NSwiZXhwIjoxNjY0OTM0MjQ1fQ.gnQwYdBrfx2LnO5Gadr40Gz4F1_n0AVba5Vt5xHNZck'
     * def authtoken = signinToken.response.token
