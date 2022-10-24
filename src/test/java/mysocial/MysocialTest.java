@@ -10,7 +10,7 @@ public class MysocialTest {
     void testParallel() {
         Results results = Runner.path("classpath:mysocial")
                 //.outputCucumberJson(true)
-                .parallel(1);
+                .parallel(3);
         assertEquals(0, results.getFailCount(), results.getErrorMessages());
     }
 }

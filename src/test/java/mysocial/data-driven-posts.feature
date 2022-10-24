@@ -3,6 +3,7 @@ Feature: Verify posts api for mysocial
 Background: Initialize stuff
    Given url 'https://jsonplaceholder.typicode.com'
 
+@parallel=false
 Scenario Outline: Verify /post/<postId> works
     Given path 'posts'
     And path <postId>
