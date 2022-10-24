@@ -1,7 +1,7 @@
 Feature: Verify posts api for mysocial
 
 Background: Initialize stuff
-   
+    * configure retry = { count: 10, interval: 5000 }
    
 Scenario: Verify /posts works
     Given url postService
@@ -11,3 +11,12 @@ Scenario: Verify /posts works
     * print myVarName
     And match response == '#array'
     And match each response == {"userId": '#number', "id": '#number', "title":  '#string',  "body": '#string' } 
+
+Scenario: Verify /posts works with retry until
+    Given url postService
+    Given path 'posts'
+    And retry until responseStatus == 200
+    When method get
+    * print myVarName
+    And match response == '#array'
+    And match each response == {"userId": '#number', "id": '#number', "title":  '#string',  "body": '#string' }     
