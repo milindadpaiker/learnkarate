@@ -50,7 +50,7 @@ Scenario: Verify that a new post can be created
     }
     """
     When method post
-    Then status 201
+    Then status 202
     And match response == { id: '#number', title: 'foo',  body: 'bar',  userId: 1 }
 
 Scenario: Verify update on /post/{uid} works
