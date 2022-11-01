@@ -1,3 +1,5 @@
+//This feature file requires a custom setup of running a local server of 'https://jsonplaceholder.typicode.com'. 
+@ignore 
 Feature: Sample feature testing java interop
 
 Background: Intialize stuff

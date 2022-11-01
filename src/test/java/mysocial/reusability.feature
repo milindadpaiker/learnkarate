@@ -1,3 +1,5 @@
+//This feature file requires a custom setup of running a local server of 'https://jsonplaceholder.typicode.com'. 
+@ignore 
 Feature: Verify reusability
 
 Background: Initialize stuff
